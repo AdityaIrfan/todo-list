@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "2e746f3d-2a82-45e2-a6c3-b60236844e72",
+		"name": "Todo List [Pharindo - Pharos]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Fresh New Year\",\n    \"Action_Time\": 1640970000,\n    \"Objective_List\": [\n        \"Bike\",\n        \"Jog at park\",\n        \"Lunch\",\n        \"Laundry & Cleaning\",\n        \"Netflix\"\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/add",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"Fresh New Year 2\",\n    \"Action_Time\": 1640970000,\n    \"Objective_List\": [\n        \"Bike\",\n        \"Jog at park\",\n        \"Lunch\",\n        \"Laundry & Cleaning\",\n        \"Netflix\"\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Aug 2022 17:52:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "\"21-1303719971\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get One By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/task/get/a",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"get",
+						"a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get One By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/task/get/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"get",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Aug 2022 17:53:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "\"441-1297782322\""
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"Task_ID\": 2,\n        \"Title\": \"Task Monday 25 Updated (Grandma req)\",\n        \"Action_Time\": 1640995200,\n        \"Created_Time\": 1659574321,\n        \"Updated_Time\": 1659574342,\n        \"Is_Finished\": false,\n        \"Objective_List\": [\n            {\n                \"Objective_Name\": \"Buy New Work Chair\",\n                \"Is_Finished\": true\n            },\n            {\n                \"Objective_Name\": \"Pre-Order new TV\",\n                \"Is_Finished\": true\n            },\n            {\n                \"Objective_Name\": \"Buy new Gardening Set\",\n                \"Is_Finished\": false\n            },\n            {\n                \"Objective_Name\": \"Buy 4-8 new pot\",\n                \"Is_Finished\": false\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Task Monday 25 Updated (Grandma req)\",\n    \"Objective_List\": [\n        {\n            \"Objective_Name\": \"Buy New Work Chair\",\n            \"Is_Finished\": true\n        },\n        {\n            \"Objective_Name\": \"Pre-Order new TV\",\n            \"Is_Finished\": true\n        },\n        {\n            \"Objective_Name\": \"Buy new Gardening Set\",\n            \"Is_Finished\": false\n        },\n        {\n            \"Objective_Name\": \"Buy 4-8 new pot\",\n            \"Is_Finished\": false\n        }\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/update/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"update",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"Task Monday 25 Updated (Grandma req)\",\n    \"Objective_List\": [\n        {\n            \"Objective_Name\": \"Buy New Work Chair\",\n            \"Is_Finished\": true\n        },\n        {\n            \"Objective_Name\": \"Pre-Order new TV\",\n            \"Is_Finished\": true\n        },\n        {\n            \"Objective_Name\": \"Buy new Gardening Set\",\n            \"Is_Finished\": false\n        },\n        {\n            \"Objective_Name\": \"Buy 4-8 new pot\",\n            \"Is_Finished\": false\n        }\n    ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task/update/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"update",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Aug 2022 17:53:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "\"21-1303719971\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/task/delete/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/task/delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 04 Aug 2022 03:33:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "\"21-1303719971\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/task/get?Limit=2&Page=1&Title=sa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"get"
+					],
+					"query": [
+						{
+							"key": "Limit",
+							"value": "2"
+						},
+						{
+							"key": "Page",
+							"value": "1"
+						},
+						{
+							"key": "Title",
+							"value": "sa"
+						},
+						{
+							"key": "Action_Time_Start",
+							"value": "1640995200",
+							"disabled": true
+						},
+						{
+							"key": "Action_Time_End",
+							"value": "1640995200",
+							"disabled": true
+						},
+						{
+							"key": "Is_FInished",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/task/get?Limit=2&Page=1&Title=sa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"get"
+							],
+							"query": [
+								{
+									"key": "Limit",
+									"value": "2"
+								},
+								{
+									"key": "Page",
+									"value": "1"
+								},
+								{
+									"key": "Title",
+									"value": "sa"
+								},
+								{
+									"key": "Action_Time_Start",
+									"value": "1640995200",
+									"disabled": true
+								},
+								{
+									"key": "Action_Time_End",
+									"value": "1640995200",
+									"disabled": true
+								},
+								{
+									"key": "Is_FInished",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 04 Aug 2022 05:52:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "265"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "\"540-3867670467\""
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"List_Data\": [\n            {\n                \"Task_ID\": 7,\n                \"Title\": \"satu\",\n                \"Action_Time\": 1640970000,\n                \"Created_Time\": 1659617403,\n                \"Updated_Time\": 1659617403,\n                \"Is_Finished\": false,\n                \"Objective_List\": [\n                    {\n                        \"Objective_Name\": \"Bike\",\n                        \"Is_Finished\": false\n                    },\n                    {\n                        \"Objective_Name\": \"Jog at park\",\n                        \"Is_Finished\": false\n                    },\n                    {\n                        \"Objective_Name\": \"Lunch\",\n                        \"Is_Finished\": false\n                    },\n                    {\n                        \"Objective_Name\": \"Laundry & Cleaning\",\n                        \"Is_Finished\": false\n                    },\n                    {\n                        \"Objective_Name\": \"Netflix\",\n                        \"Is_Finished\": false\n                    }\n                ]\n            }\n        ],\n        \"Pagination_Data\": {\n            \"Current_Page\": 1,\n            \"Max_Data_Per_Page\": 2,\n            \"Max_Page\": 1,\n            \"Total_All_Data\": 1\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}
